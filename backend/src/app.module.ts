@@ -14,10 +14,12 @@ import { Film, FilmSchema } from './afisha/films/schemas/film.schema';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true, cache: true }),
+
     ServeStaticModule.forRoot({
-      rootPath: path.join(__dirname, '..', 'public'),
-      serveRoot: '/content',
+      rootPath: path.join(__dirname, '..', 'public', 'content', 'afisha'),
+      serveRoot: '/content/afisha',
     }),
+
     MongooseModule.forRoot(process.env.DATABASE_URL),
     MongooseModule.forFeature([{ name: Film.name, schema: FilmSchema }]),
   ],
