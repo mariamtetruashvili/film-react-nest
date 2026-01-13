@@ -8,8 +8,7 @@ import { FilmsController } from './afisha/films/films.controller';
 import { FilmsService } from './afisha/films/films.service';
 import { OrderController } from './afisha/order/order.controller';
 import { OrderService } from './afisha/order/order.service';
-import { MongooseModule } from '@nestjs/mongoose';
-import { Film, FilmSchema } from './afisha/films/schemas/film.schema';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [
@@ -20,8 +19,7 @@ import { Film, FilmSchema } from './afisha/films/schemas/film.schema';
       serveRoot: '/content/afisha',
     }),
 
-    MongooseModule.forRoot(process.env.DATABASE_URL),
-    MongooseModule.forFeature([{ name: Film.name, schema: FilmSchema }]),
+    DatabaseModule,
   ],
   controllers: [FilmsController, OrderController],
   providers: [configProvider, FilmsService, OrderService],
