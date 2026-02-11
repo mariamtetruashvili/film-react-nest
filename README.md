@@ -1,5 +1,10 @@
 # FILM!
 
+### Ссылки на деплой
+
+- **Фронтенд:** [http://mariamtetruashvili.nomorepartiessbs.ru](http://mariamtetruashvili.nomorepartiessbs.ru)  
+- **Бэкенд API:** [http://mariamtetruashvili.nomorepartiessbs.ru/api](http://mariamtetruashvili.nomorepartiessbs.ru/api)
+
 ## Установка
 
 ### MongoDB
