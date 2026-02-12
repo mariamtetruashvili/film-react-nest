@@ -4,7 +4,6 @@ import { FilmsService } from '../films.service';
 
 describe('FilmsController', () => {
   let controller: FilmsController;
-  let service: FilmsService;
 
   const mockFilmsService = {
     getFilms: jest.fn().mockResolvedValue([{ id: 1, title: 'Film 1' }]),
@@ -18,7 +17,6 @@ describe('FilmsController', () => {
     }).compile();
 
     controller = module.get<FilmsController>(FilmsController);
-    service = module.get<FilmsService>(FilmsService);
   });
 
   it('should return all films', async () => {
