@@ -1,9 +1,9 @@
 # FILM!
 
-### Ссылки на деплой
+## 🚀 Ссылки на проект
 
-- **Фронтенд:** [http://mariamtetruashvili.nomorepartiessbs.ru](http://mariamtetruashvili.nomorepartiessbs.ru)  
-- **Бэкенд API:** [http://mariamtetruashvili.nomorepartiessbs.ru/api](http://mariamtetruashvili.nomorepartiessbs.ru/api)
+* **Frontend (Сайт):** [http://mariamtetruashvili.nomorepartiessbs.ru](http://mariamtetruashvili.nomorepartiessbs.ru)
+* **Backend API:** [http://mariamtetruashvili.nomorepartiessbs.ru/api/afisha/films](http://mariamtetruashvili.nomorepartiessbs.ru/api/afisha/films)
 
 ## Установка
 

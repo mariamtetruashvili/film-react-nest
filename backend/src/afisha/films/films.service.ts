@@ -10,8 +10,12 @@ export class FilmsService {
     private readonly filmRepository: Repository<Film>,
   ) {}
 
-  async getFilms(): Promise<Film[]> {
-    return this.filmRepository.find({ relations: ['schedule'] });
+  async getFilms(): Promise<{ total: number; items: Film[] }> {
+    const films = await this.filmRepository.find({ relations: ['schedule'] });
+    return {
+      total: films.length,
+      items: films,
+    };
   }
 
   async getFilmSchedule(id: string) {
@@ -19,6 +23,10 @@ export class FilmsService {
       where: { id },
       relations: ['schedule'],
     });
-    return film ? film.schedule : [];
+    const schedule = film ? film.schedule : [];
+    return {
+      total: schedule.length,
+      items: schedule,
+    };
   }
 }

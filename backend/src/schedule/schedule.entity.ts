@@ -30,5 +30,5 @@ export class Schedule {
   @ManyToOne(() => Film, (film) => film.schedule)
   @JoinColumn({ name: 'filmId' })
   film: Film;
-  occupiedSeats: any;
+  occupiedSeats: string[];
 }
