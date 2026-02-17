@@ -1,20 +1,35 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Entity, Column, OneToMany, PrimaryColumn } from 'typeorm';
 import { Schedule } from '../schedule/schedule.entity';
 
-@Entity()
+@Entity('films')
 export class Film {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryColumn()
+  id: string;
+
+  @Column('decimal', { precision: 3, scale: 1 })
+  rating: number;
+
+  @Column()
+  director: string;
+
+  @Column('text', { array: true })
+  tags: string[];
 
   @Column()
   title: string;
 
-  @Column({ nullable: true })
-  description?: string;
+  @Column('text')
+  about: string;
+
+  @Column('text')
+  description: string;
 
   @Column()
-  duration: number;
+  image: string;
+
+  @Column()
+  cover: string;
 
   @OneToMany(() => Schedule, (schedule) => schedule.film, { cascade: true })
-  schedules: Schedule[];
+  schedule: Schedule[];
 }

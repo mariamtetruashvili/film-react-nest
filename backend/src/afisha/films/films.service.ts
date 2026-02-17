@@ -11,14 +11,14 @@ export class FilmsService {
   ) {}
 
   async getFilms(): Promise<Film[]> {
-    return this.filmRepository.find({ relations: ['schedules'] });
+    return this.filmRepository.find({ relations: ['schedule'] });
   }
 
-  async getFilmSchedule(id: number) {
+  async getFilmSchedule(id: string) {
     const film = await this.filmRepository.findOne({
       where: { id },
-      relations: ['schedules'],
+      relations: ['schedule'],
     });
-    return film ? film.schedules : [];
+    return film ? film.schedule : [];
   }
 }
