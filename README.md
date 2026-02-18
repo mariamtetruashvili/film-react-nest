@@ -1,5 +1,10 @@
 # FILM!
 
+## 🚀 Ссылки на проект
+
+* **Frontend (Сайт):** [http://mariamtetruashvili.nomorepartiessbs.ru](http://mariamtetruashvili.nomorepartiessbs.ru)
+* **Backend API:** [http://mariamtetruashvili.nomorepartiessbs.ru/api/afisha/films](http://mariamtetruashvili.nomorepartiessbs.ru/api/afisha/films)
+
 ## Установка
 
 ### MongoDB

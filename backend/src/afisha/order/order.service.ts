@@ -16,16 +16,16 @@ export class OrderService {
   ) {}
 
   async createOrder(dto: OrderDto) {
-    const filmId = Number(dto.filmId);
-    const sessionId = Number(dto.sessionId);
+    const filmId = dto.filmId;
+    const sessionId = dto.sessionId;
 
     const film = await this.filmRepository.findOne({
       where: { id: filmId },
-      relations: ['schedules'],
+      relations: ['schedule'],
     });
     if (!film) throw new BadRequestException('Film not found');
 
-    const session = film.schedules.find((s) => s.id === sessionId);
+    const session = film.schedule.find((s) => s.id === sessionId);
     if (!session) throw new BadRequestException('Session not found');
 
     const seatStr = `${dto.seat.row}:${dto.seat.place}`;
